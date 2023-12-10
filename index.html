@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="discription" content="home work" />
+    <meta name="keywords" content="html5,css" />
+    <meta name="author" content="usova-elena" />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>Мальцева</title>
+</head>
+
+<body id="body">
+    <div class="conteiner" id="example">
+        <h1 class="title">Список дел</h1>
+        <input class="list_text" v-model="watchInput" />
+        <ol class="list">
+            <todo-item-new-test v-for="item in groceryList" v-bind:todo="item">
+            </todo-item-new-test>
+        </ol>
+        <div class="conteiner_btn">
+            <button class="btn_get" id="btn" v-on:click="getAnswer"> Получить данные в консоль </button>
+            <button class="btn_add" id="btn" v-on:click="addTodo"> Добавить к списку </button>
+            <button class="btn_sort" id="btn" v-on:click="sortList"> Сортировка </button>
+            <button class="btn_delete" id="btn" v-on:click="deleteItem"> Удалить </button>
+        </div>
+    </div>
+    <div class="video">
+        <video class="video-bg" src="./video.mp4" autoplay muted loop>
+        </video>
+    </div>
+</body>
+
+</html>
